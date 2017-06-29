@@ -36,20 +36,20 @@ $(function() {
 
     /* Test suite named "The menu" */
     describe('The menu', function() {
-        var body = $('body');
-        var menuIcon = $('.menu-icon-link');
+        var $body = $('body');
+        var $menuIcon = $('.menu-icon-link');
 
         // Test to ensure the menu element is hidden by default
         it('is hidden by default', function() {
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            expect($body.hasClass('menu-hidden')).toBe(true);
         });
 
         // Test the menu show/hide toggle when icon is clicked
         it('changes visibility when the icon is clicked', function() {
-            menuIcon.click();
-            expect(body.hasClass('menu-hidden')).toBe(false);
-            menuIcon.click();
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            $menuIcon.click();
+            expect($body.hasClass('menu-hidden')).toBe(false);
+            $menuIcon.click();
+            expect($body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
@@ -61,7 +61,7 @@ $(function() {
             loadFeed(0, done);
         });
 
-        // Then test to make sure that the .feed container is not empty
+        // Then test to ensure that the .feed container is not empty
         it('have loaded', function(done) {
             expect($('.feed')).not.toBe(':empty');
             done();
