@@ -70,14 +70,17 @@ $(function() {
 
     /* Test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-        var $firstFeed = $('.feed').html();
+        var $firstFeed;
         var $secondFeed;
 
-        // Before the test runs load the second feed for comparison
+        // Before the test runs load two feeds for comparison
         beforeEach(function(done) {
-            loadFeed(1, function() {
-                $secondFeed = $('.feed').html();
-                done();
+            loadFeed(0, function() {
+                $firstFeed = $('.feed').html();
+                loadFeed(1, function() {
+                    $secondFeed = $('.feed').html();
+                    done();
+                });
             });
         });
 
