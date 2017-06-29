@@ -70,18 +70,20 @@ $(function() {
 
     /* Test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-        var $firstFeed;
+        var $firstFeed = $('.feed').html();
         var $secondFeed;
 
-        // Before the test runs load 2 different feeds for comparison
+        // Before the test runs load the second feed for comparison
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                $firstFeed = $('.feed').html();
-            });
             loadFeed(1, function() {
                 $secondFeed = $('.feed').html();
                 done();
             });
+        });
+
+        // After the test runs reload the firstFeed as the default
+        afterEach(function(done) {
+            loadFeed(0, done);
         });
 
         // Test to ensure that when a new feed is loaded the content changes
