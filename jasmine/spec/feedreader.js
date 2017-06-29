@@ -63,7 +63,7 @@ $(function() {
 
         // Then test to ensure that the .feed container is not empty
         it('have loaded', function(done) {
-            expect($('.feed')).not.toBe(':empty');
+            expect($('.feed .entry')).not.toBe(':empty');
             done();
         });
     });
