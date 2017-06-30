@@ -84,11 +84,6 @@ $(function() {
             });
         });
 
-        // After the test runs reload the firstFeed as the default
-        afterEach(function(done) {
-            loadFeed(0, done);
-        });
-
         // Test to ensure that when a new feed is loaded the content changes
         it('changes feed content', function(done) {
             expect($secondFeed).not.toEqual($firstFeed);
