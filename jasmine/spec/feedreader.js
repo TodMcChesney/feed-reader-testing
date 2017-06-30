@@ -62,9 +62,8 @@ $(function() {
         });
 
         // Then test to ensure there is at least 1 entry in the .feed container
-        it('have loaded', function(done) {
+        it('have loaded', function() {
             expect($('.feed .entry').length).toBeGreaterThan(0);
-            done();
         });
     });
 
@@ -85,9 +84,8 @@ $(function() {
         });
 
         // Test to ensure that when a new feed is loaded the content changes
-        it('changes feed content', function(done) {
+        it('changes feed content', function() {
             expect($secondFeed).not.toEqual($firstFeed);
-            done();
         });
     });
 }());
