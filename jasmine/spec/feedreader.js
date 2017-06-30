@@ -61,9 +61,9 @@ $(function() {
             loadFeed(0, done);
         });
 
-        // Then test to ensure that the .feed container is not empty
+        // Then test to ensure there is at least 1 entry in the .feed container
         it('have loaded', function(done) {
-            expect($('.feed .entry')).not.toBe(':empty');
+            expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
         });
     });
